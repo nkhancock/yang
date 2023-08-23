@@ -25,7 +25,16 @@ module ieee802-dot1q-types {
 
     This version of this YANG module is part of IEEE Std 802.1Q;
     see the standard itself for full legal notices.";
-  revision 2022-10-30 {
+
+  revision 2023-07-14 {
+    description
+      "Published as part of IEEE Std 802.1Qcj-2023.";
+    reference
+      "IEEE Std 802.1Qcj-2023, Bridges and Bridged Networks - Automatic
+      Attachment to Provider Backbone Bridging (PBB) Services.";
+  }
+
+  revision 2022-09-29 {
     description
       "Published as part of IEEE Std 802.1Qcj-2023.";
     reference
@@ -293,12 +302,14 @@ module ieee802-dot1q-types {
   }
   typedef isid-type {
     type uint32 {
-      range "1..16777215";
+      range "1|255..16777214";
     }
     description
       "The i-sid type represents a backbone service instance identifier
       (I-SID). This is the 24-bit I-SID field used in the I-TAG TCI of a
-      provider backbone bridging frame.";
+      provider backbone bridging frame. The values 0, 2-254, and 16777215 are
+	  reserved for future standardization. The value 255 is dedicated to
+	  use by the SPB protocol.";
     reference
       "3.108, 9.7 of IEEE Std 802.1Q-2022";
   }

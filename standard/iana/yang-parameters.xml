@@ -4,7 +4,7 @@
 <registry xmlns="http://www.iana.org/assignments" id="yang-parameters">
   <title>YANG Parameters</title>
   <created>2010-06-10</created>
-  <updated>2023-05-31</updated>
+  <updated>2023-07-27</updated>
   
   <registry id="yang-parameters-1">
     <title>YANG Module Names</title>
@@ -616,6 +616,16 @@ and <xref type="registry" data="safi-namespace">Subsequent Address Family Identi
       <xref type="draft" data="RFC-ietf-i2nsf-capability-data-model-32"/>
       <notes><xref type="draft" data="RFC-ietf-i2nsf-capability-data-model-32"/>'s module file will be posted upon the document's publication as an RFC.</notes>
     </record>
+    <record date="2023-06-26">
+      <name>ietf-i2nsf-cons-facing-interface</name>
+      <iana>N</iana>
+      <file type="yang"/>
+      <namespace>urn:ietf:params:xml:ns:yang:ietf-i2nsf-cons-facing-interface</namespace>
+      <prefix>i2nsfcfi</prefix>
+      <module/>
+      <xref type="draft" data="RFC-ietf-i2nsf-consumer-facing-interface-dm-31"/>
+      <notes><xref type="draft" data="RFC-ietf-i2nsf-consumer-facing-interface-dm-31"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+    </record>
     <record date="2021-04-21">
       <name>ietf-i2nsf-ike</name>
       <iana>N</iana>
@@ -1034,6 +1044,16 @@ and <xref type="registry" data="safi-namespace">Subsequent Address Family Identi
       <prefix>lne</prefix>
       <module/>
       <xref type="rfc" data="rfc8530"/>
+      <notes/>
+    </record>
+    <record date="2023-06-20" updated="2023-07-27">
+      <name>ietf-schc-compound-ack</name>
+      <iana>N</iana>
+      <file type="yang">ietf-schc-compound-ack@2023-07-26.yang</file>
+      <namespace>urn:ietf:params:xml:ns:yang:ietf-schc-compound-ack</namespace>
+      <prefix>schc-compound-ack</prefix>
+      <module/>
+      <xref type="rfc" data="rfc9441"/>
       <notes/>
     </record>
     <record date="2019-02-01">
@@ -1506,15 +1526,15 @@ and <xref type="registry" data="safi-namespace">Subsequent Address Family Identi
       <xref type="rfc" data="rfc8294"/>
       <notes/>
     </record>
-    <record date="2023-01-27">
+    <record date="2023-06-23">
       <name>ietf-sap-ntw</name>
       <iana>N</iana>
-      <file type="yang"/>
+      <file type="yang">ietf-sap-ntw@2023-06-20.yang</file>
       <namespace>urn:ietf:params:xml:ns:yang:ietf-sap-ntw</namespace>
       <prefix>sap</prefix>
       <module/>
-      <xref type="draft" data="RFC-ietf-opsawg-sap-15"/>
-      <notes><xref type="draft" data="RFC-ietf-opsawg-sap-15"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+      <xref type="rfc" data="rfc9408"/>
+      <notes/>
     </record>
     <record date="2022-10-13">
       <name>ietf-schc</name>
@@ -1556,35 +1576,35 @@ and <xref type="registry" data="safi-namespace">Subsequent Address Family Identi
       <xref type="rfc" data="rfc9020"/>
       <notes/>
     </record>
-    <record date="2023-01-27">
+    <record date="2023-01-27" updated="2023-07-12">
       <name>ietf-service-assurance</name>
       <iana>N</iana>
-      <file type="yang"/>
+      <file type="yang">ietf-service-assurance@2023-07-11.yang</file>
       <namespace>urn:ietf:params:xml:ns:yang:ietf-service-assurance</namespace>
       <prefix>sain</prefix>
       <module/>
-      <xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>
-      <notes><xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+      <xref type="rfc" data="rfc9418"/>
+      <notes/>
     </record>
-    <record date="2023-01-27">
+    <record date="2023-01-27" updated="2023-07-12">
       <name>ietf-service-assurance-device</name>
       <iana>N</iana>
-      <file type="yang"/>
+      <file type="yang">ietf-service-assurance-device@2023-07-11.yang</file>
       <namespace>urn:ietf:params:xml:ns:yang:ietf-service-assurance-device</namespace>
       <prefix>sain-device</prefix>
       <module/>
-      <xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>
-      <notes><xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+      <xref type="rfc" data="rfc9418"/>
+      <notes/>
     </record>
-    <record date="2023-01-27">
+    <record date="2023-01-27" updated="2023-07-12">
       <name>ietf-service-assurance-interface</name>
       <iana>N</iana>
-      <file type="yang"/>
+      <file type="yang">ietf-service-assurance-interface@2023-07-11.yang</file>
       <namespace>urn:ietf:params:xml:ns:yang:ietf-service-assurance-interface</namespace>
       <prefix>sain-interface</prefix>
       <module/>
-      <xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>
-      <notes><xref type="draft" data="RFC-ietf-opsawg-service-assurance-yang-11"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+      <xref type="rfc" data="rfc9418"/>
+      <notes/>
     </record>
     <record date="2014-10-22">
       <name>ietf-snmp</name>
@@ -1754,7 +1774,7 @@ and <xref type="registry" data="safi-namespace">Subsequent Address Family Identi
       <prefix>ietf-syslog</prefix>
       <module/>
       <xref type="draft" data="draft-ietf-netmod-syslog-model-26"/>
-      <notes>TEMPORARY - registered 2021-07-11, extension registered 2022-05-11, expires 2023-07-11. <xref type="draft" data="draft-ietf-netmod-syslog-model-26"/>'s module file will be posted upon the document's publication as an RFC.</notes>
+      <notes>TEMPORARY - registered 2021-07-11, extension registered 2023-06-30, expires 2024-07-11. <xref type="draft" data="draft-ietf-netmod-syslog-model-26"/>'s module file will be posted upon the document's publication as an RFC.</notes>
     </record>
     <record date="2014-06-03">
       <name>ietf-system</name>
