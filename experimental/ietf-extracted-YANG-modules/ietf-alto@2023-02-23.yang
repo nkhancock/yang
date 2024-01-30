@@ -146,7 +146,7 @@ module ietf-alto {
     description
       "Indicates support of performance metrics extension.";
     reference
-      "RFC YYYY: ALTO Performance Cost Metrics";
+      "RFC 9439: ALTO Performance Cost Metrics";
   }
 
   // Base identities
@@ -191,7 +191,7 @@ module ietf-alto {
       "The cost source indicates the high-level type of the
        data source.";
     reference
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 3.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 3.1";
   }
 
   // Identities for ALTO information resources
@@ -332,56 +332,56 @@ module ietf-alto {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 4.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 4.1";
   }
 
   identity delay-rt {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 4.2";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 4.2";
   }
 
   identity delay-variation {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 4.3";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 4.3";
   }
 
   identity lossrate {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 4.4";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 4.4";
   }
 
   identity hopcount {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 4.5";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 4.5";
   }
 
   identity tput {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 5.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 5.1";
   }
 
   identity bw-residual {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 5.2";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 5.2";
   }
 
   identity bw-available {
     if-feature "performance-metrics";
     base cost-metric;
     description
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 5.3";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 5.3";
   }
 
   // Identities for cost sources
@@ -393,7 +393,7 @@ module ietf-alto {
       "The 'nominal' category indicates that the metric value is
        statically configured by the underlying devices.";
     reference
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 3.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 3.1";
   }
 
   identity sla {
@@ -404,7 +404,7 @@ module ietf-alto {
        derived from some commitment which this document refers to
        as service-level agreement (SLA).";
     reference
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 3.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 3.1";
   }
 
   identity estimation {
@@ -414,7 +414,7 @@ module ietf-alto {
       "The 'estimation' category indicates that the metric value is
        computed through an estimation process.";
     reference
-      "RFC YYYY: ALTO Performance Cost Metrics, Section 3.1";
+      "RFC 9439: ALTO Performance Cost Metrics, Section 3.1";
   }
 
   // Typedefs
@@ -1057,67 +1057,7 @@ module ietf-alto {
           description
             "Identify the type of the data source.";
         }
-        choice update-policy {
-          mandatory true;
-          description
-            "Policy to get updates from data sources.";
-          case reactive {
-            description
-              "Configuration for the data source listener to
-               reactively subscribe data and wait for updates
-               published by the data source.";
-            choice publish-mode {
-              description
-                "Configuration for when the data source publish an
-                 update.";
-              case on-change {
-                description
-                  "The data source is requested to publish an
-                   update once the data has a change.";
-                leaf on-change {
-                  type empty;
-                  mandatory true;
-                  description
-                    "Indicates an on-change subscription.";
-                }
-              }
-              case periodic {
-                description
-                  "The data source is requested to periodically
-                   publish an update.";
-                leaf feed-interval {
-                  type uint32;
-                  units "seconds";
-                  mandatory true;
-                  description
-                    "Specifies the duration of time that should
-                     occur between periodic push updates, in units
-                     of seconds. If it is set to zero, it is
-                     equivalent to the on-change mode.";
-                }
-              }
-            }
-          }
-          case proactive {
-            description
-              "Configuration for the data source listener to
-               proactively pull data from the data source.";
-            leaf poll-interval {
-              type uint32;
-              units "seconds";
-              mandatory true;
-              description
-                "Polling interval in seconds for proactive mode. If
-                 it is set to zero, the data source listener will
-                 never pull data periodically. The data can still
-                 be pulled when an algorithm plugin of an
-                 information resource calls this data source
-                 listener. This can be useful for some on-demand
-                 settings.";
-            }
-          }
-        }
-        choice source-params {
+        container source-params {
           description
             "Data source specific configuration.";
           reference

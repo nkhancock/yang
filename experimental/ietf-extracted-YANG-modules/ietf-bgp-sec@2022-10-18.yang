@@ -14,13 +14,19 @@ module ietf-bgp-sec {
   import ietf-bgp {
     prefix "bgp";
     reference
-      "RFC XXXX: BGP YANG Model for Service Provider Networks";
+      "RFC XXXX: YANG Model for Border Gateway Protocol (BGP-4)";
   }
 
   import iana-bgp-types {
     prefix "bt";
     reference
-      "RFC XXXX: BGP YANG Model for Service Provider Networks";
+      "RFC XXXX: YANG Model for Border Gateway Protocol (BGP-4)";
+  }
+
+  import iana-bgp-rib-types {
+    prefix "brt";
+    reference
+      "RFC XXXX: YANG Model for Border Gateway Protocol (BGP-4)";
   }
 
   organization
@@ -60,11 +66,11 @@ module ietf-bgp-sec {
     description
       "Initial Version";
     reference
-      "RFC XXXX, YANG Data Model for BGPSec";
+      "RFC XXXX, YANG Data Model for RPKI to Router Protocol";
   }
 
   identity ineligible-bgp {
-    base bgp:ineligible-route-reason;
+    base brt:ineligible-route-reason;
     description
       "Route was ineligible due to bgpsec";
   }
@@ -89,6 +95,7 @@ module ietf-bgp-sec {
     reference
       "RFC 8205, BGPsec Protocol Specification.";
   }
+
   grouping bgpsec-validation-config {
     description
       "BGPsec validation of BGP prefix.";
@@ -185,6 +192,7 @@ module ietf-bgp-sec {
         "BGPsec validity of BGP IPv6 Unicast prefix";
     }
   }
+
   augment "/rt:routing/rt:control-plane-protocols"
         + "/rt:control-plane-protocol/bgp:bgp/bgp:global"
         + "/bgp:afi-safis/bgp:afi-safi"
@@ -225,7 +233,6 @@ module ietf-bgp-sec {
       "augmentation of BGPSec for IPv4 Unicast peer group";
     uses export-bgpsec-validation-config;
   }
-
   augment "/rt:routing/rt:control-plane-protocols"
         + "/rt:control-plane-protocol/bgp:bgp/bgp:peer-groups"
         + "/bgp:peer-group/bgp:afi-safis/bgp:afi-safi"

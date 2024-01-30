@@ -45,7 +45,6 @@ module ietf-alto-stats {
       "RFC XXXX: YANG Data Models for the Application-Layer
                  Traffic Optimization (ALTO) Protocol";
   }
-
   // Groupings
 
   grouping server-level-stats {
@@ -134,6 +133,7 @@ module ietf-alto-stats {
                  Protocol, Section 11.4.1
        RFC 9240: An ALTO Extension: Entity Property Maps";
   }
+
   grouping cdni-stats {
     description
       "This grouping defines resource-specific statstics for the
@@ -381,7 +381,6 @@ module ietf-alto-stats {
       uses server-level-stats;
     }
   }
-
   augment "/alto:alto/alto:alto-server/alto:resource" {
     description
       "Augmenting statistics and configuration parameters for
